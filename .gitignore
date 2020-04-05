@@ -1,6 +1,6 @@
 .idea
-#var/**
-#data/**
+var/**
+data/**
 etc/ini/**/*.local.yml
 public/**
 build-version
