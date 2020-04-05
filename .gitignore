@@ -1,0 +1,9 @@
+.idea
+#var/**
+#data/**
+etc/ini/**/*.local.yml
+public/**
+build-version
+
+vendor
+node_modules
