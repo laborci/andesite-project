@@ -2,7 +2,7 @@
 var/**
 data/**
 etc/ini/**/*.local.yml
-#public/**
+public/**
 build-version
 
 vendor
