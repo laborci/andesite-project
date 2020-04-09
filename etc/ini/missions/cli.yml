@@ -1,41 +1,12 @@
 pattern: ":"
 mission: Andesite\Mission\Cli\CliMission
 modules:
-
   Application\CliCommand\Test:
-
   Andesite\CliCommand\DumpDB:
-
   Andesite\CliCommand\ShowEnv:
-
   Andesite\CliCommand\Ghost:
-
-  Andesite\CliCommand\GenerateCodexHelper:
-    namespace: Application\AdminCodex\GhostHelper
-
-  Andesite\CliCommand\UpdateGroups:
-    user-ghost: Application\Ghost\User
-    group-field: groups
-
-  Andesite\CliCommand\GenerateConstants:
-    namespaces: [Application\Constant]
-
-  Andesite\CliCommand\ExtractApi:
-    api:
-      path: /api/
-      namespace: Application\Mission\Web\Api
-      extract:
-        - file ~root: app.mission.web/js/constants/end-points.js
-          as:
-
-  Andesite\CliCommand\GenerateConfig:
-    virtualhost:
-      template ~path.etc: vhost/virtualhost.conf
-      output ~path.var: virtualhost.conf
-    htaccess:
-      template ~path.etc: vhost/htaccess
-      output ~path.var: .htaccess
-    user-ini:
-      template ~path.etc: vhost/user.ini
-      output ~path.var: .user.ini
-
+  Andesite\CliCommand\GenerateCodexHelper @: config/cli/generate-codex-helper
+  Andesite\CliCommand\UpdateGroups @: config/cli/update-groups
+  Andesite\CliCommand\GenerateConstants @: config/cli/generate-constants
+  Andesite\CliCommand\ExtractApi @: config/cli/extract-api
+  Andesite\CliCommand\GenerateConfig @: config/cli/generate-config

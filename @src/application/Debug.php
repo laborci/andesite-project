@@ -13,7 +13,7 @@ use Andesite\DBAccess\Connection\SqlLogInterface;
 use Andesite\Util\RemoteLog\RemoteLogSender;
 use Symfony\Component\HttpFoundation\Request;
 
-class Startup extends Module{
+class Debug extends Module{
 
 	public static function run($config){
 		if (Andesite::Service()->isDevMode()){

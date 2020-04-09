@@ -1,0 +1,5 @@
+source ~path.etc: vhost
+translate:
+  virtualhost-conf ~path.var: virtualhost.conf
+  user-ini ~path.assets: .user.ini
+  htaccess ~path.assets: .htaccess
