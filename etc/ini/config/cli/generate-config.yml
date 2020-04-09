@@ -1,5 +1,6 @@
 source ~path.etc: vhost
 translate:
   virtualhost-conf ~path.var: virtualhost.conf
+  virtualhost-ssl-redirect-conf ~path.var: virtualhost-ssl-redirect.conf
   user-ini ~path.assets: .user.ini
   htaccess ~path.assets: .htaccess
