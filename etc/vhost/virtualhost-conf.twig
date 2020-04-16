@@ -1,70 +1,69 @@
-{% set attachments = module.configs["attachment-repository"] %}
-<VirtualHost *:{{ sys.vhost.ssl ? 443 : 80 }}>
+<VirtualHost *:{{ ssl ? 443 : 80 }}>
 
-	ServerName "{{ sys.domain }}"
-	ServerAlias "*.{{ sys.domain }}
+	ServerName "{{ domain }}"
+	ServerAlias "*.{{ domain }}
 
 	DirectoryIndex "index.php"
 	DocumentRoot "{{ path.public }}"
-	ErrorLog "{{ root }}var/error.log"
+	ErrorLog "{{ path.errorlog }}"
 
 	{% for name, attachment in attachments %}
 
-		Alias "{{ attachment.thumbnail.url }}" "{{ attachment.thumbnail.path }}"
-		<Directory "{{ attachment.thumbnail.path }}" >
+	Alias "{{ attachment.thumbnail.url }}" "{{ attachment.thumbnail.path }}"
+	<Directory "{{ attachment.thumbnail.path }}" >
 		Require all granted
 		AllowOverride all
 		RewriteEngine On
 		RewriteCond %{REQUEST_FILENAME} !-f
 		RewriteRule . /index.php [L]
-		</Directory>
+	</Directory>
 
-		Alias "{{ attachment.url }}" "{{ attachment.path }}"
-		<Directory "{{ attachment.path }}" >
+	Alias "{{ attachment.url }}" "{{ attachment.path }}"
+	<Directory "{{ attachment.path }}" >
 		Require all granted
 		AllowOverride all
-		</Directory>
+	</Directory>
 
 	{% endfor %}
 
 	<Directory "{{ path.public }}">
-	Require all granted
-	AllowOverride all
-	Options -Indexes
-	Options +FollowSymlinks
+		Require all granted
+		AllowOverride all
+		Options -Indexes
+		Options +FollowSymlinks
 
-	{% if not sys.vhost.fpm %}{% for config in sys.vhost.php %}
+		{% if not fpm %}{% for config in php %}
 
 		php_{{ config.type }} {{ config.key }} {{ config.value }}
-	{% endfor %}{% endif %}
+		{% endfor %}{% endif %}
 
-	RewriteEngine On
+		RewriteEngine On
 
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^(.*)/$ /$1 [L,R]
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteRule ^(.*)/$ /$1 [L,R]
 
-	RewriteCond %{REQUEST_URI} !(^/~.+)
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteRule . /index.php [L]
+		RewriteCond %{REQUEST_URI} !(^/~.+)
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteRule . /index.php [L]
 	</Directory>
 
-	{% if sys.vhost.fpm %}
+	{% if fpm %}
 
-		<FilesMatch \.php$>
-			SetHandler "{{ sys.vhost.fpm.handler }}"
-		</FilesMatch>
+	<FilesMatch \.php$>
+		SetHandler "{{ fpm.handler }}"
+	</FilesMatch>
 
 	{% endif %}
 
-	{% if sys.vhost.ssl %}
+	{% if ssl %}
 
-		SSLEngine On
-		SSLHonorCipherOrder On
-		SSLProtocol all -SSLv2 -SSLv3
-		SSLCipherSuite ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256
-		SSLCertificateKeyFile {{ sys.vhost.ssl["dehydrated-path"] }}{{ sys.domain }}/privkey.pem
-		SSLCertificateFile {{ sys.vhost.ssl["dehydrated-path"] }}{{ sys.domain }}/cert.pem
-		SSLCACertificateFile {{ sys.vhost.ssl["dehydrated-path"] }}{{ sys.domain }}/chain.pem
+	SSLEngine On
+	SSLHonorCipherOrder On
+	SSLProtocol all -SSLv2 -SSLv3
+	SSLCipherSuite ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256
+	SSLCertificateKeyFile {{ ssl["dehydrated-path"] }}{{ sys.domain }}/privkey.pem
+	SSLCertificateFile {{ ssl["dehydrated-path"] }}{{ sys.domain }}/cert.pem
+	SSLCACertificateFile {{ ssl["dehydrated-path"] }}{{ sys.domain }}/chain.pem
 
 	{% endif %}
 

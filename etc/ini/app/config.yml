@@ -1,0 +1,6 @@
+## add these keys to the config.local.yml
+
+/sys.module.configs.db.databases.default:
+/sys.module.configs.attachment-repository.ghost.thumbnail.secret:
+/sys.module.configs.alert.bot.id:
+/sys.module.configs.alert.bot.channel:

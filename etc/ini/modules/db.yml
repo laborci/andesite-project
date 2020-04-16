@@ -1,3 +1,0 @@
-dump.path ~path.dev: dump/
-dump.tmp &: path.tmp
-databases.default: mysql://[USER]:[PASSWORD]@127.0.0.1:3306/[DATABASE]?charset=utf8

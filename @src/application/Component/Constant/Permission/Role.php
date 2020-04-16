@@ -1,4 +1,4 @@
-<?php namespace Application\Constant\Permission;
+<?php namespace Application\Component\Constant\Permission;
 
 use Andesite\Core\Constant\Constant;
 /**

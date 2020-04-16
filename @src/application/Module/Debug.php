@@ -1,4 +1,4 @@
-<?php namespace Application;
+<?php namespace Application\Module;
 
 use Andesite\Core\Boot\Andesite;
 use Andesite\Core\Module\Module;

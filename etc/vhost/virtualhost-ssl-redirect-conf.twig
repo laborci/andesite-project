@@ -1,11 +1,11 @@
 <VirtualHost *:80>
 
-	ServerName "{{ sys.domain }}"
-	ServerAlias "*.{{ sys.domain }}
+	ServerName "{{ domain }}"
+	ServerAlias "*.{{ domain }}
 
-	Alias /.well-known/acme-challenge {{ sys.vhost.ssl.challange }}
+	Alias /.well-known/acme-challenge {{ ssl.challange }}
 
-	<Directory {{ sys.vhost.ssl.challange }}>
+	<Directory {{ ssl.challange }}>
 		Options None
 		AllowOverride None
 		<IfModule !mod_authz_core.c>

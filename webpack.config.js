@@ -1,6 +1,7 @@
 const zBuild = new (require('zengular-build'))();
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = (env, options) => {
 
@@ -17,12 +18,33 @@ module.exports = (env, options) => {
 				config: '/@web/config/'
 			}
 		},
+		optimization: {
+			minimizer: [
+				new TerserPlugin({
+					terserOptions: {
+						ecma: undefined,
+						warnings: false,
+						parse: {},
+						compress: {},
+						mangle: false, // Note `mangle.properties` is `false` by default.
+						module: false,
+						output: null,
+						toplevel: false,
+						nameCache: null,
+						ie8: false,
+						keep_classnames: true,
+						keep_fnames: false,
+						safari10: false,
+					},
+				}),
+			],
+		},
 		plugins: [
 			zBuild.verbump,
 			new CopyPlugin(zBuild.copy),
 			new MiniCssExtractPlugin({filename: '[name].css'}),
 		],
-		devtool: dev ? zBuild.devtool : false,
+		devtool: dev ? zBuild.devtool : 'source-map',
 		module: {
 			rules: [
 				{

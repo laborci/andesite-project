@@ -1,8 +1,12 @@
-subdomains: ["", "admin.", "www."]
-
 #fpm.handler: "proxy:unix:/usr/local/var/run/php7.4-fpm.sock|fcgi://localhost/"
 #ssl.dehydrated-path: "/root/dehydrated/certs/"
 #ssl.challange: "/var/www/dehydrated"
+
+domain &: sys.domain
+path:
+  public &: path.public
+  errorlog ~path.var: error.log
+attachments &: sys.module.configs.attachment-repository
 
 php:
   -

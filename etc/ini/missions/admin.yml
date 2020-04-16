@@ -1,8 +1,8 @@
 pattern~: ("admin." + sys.domain)
 mission: Application\AdminCodex\Mission
 config:
-  title: Codex
-  icon: fas fa-scroll
+  title: Gamer365/Admin
+  icon: fas fa-joystick
   loginpPlaceholder: email
   role: Admin
   who-am-i: Application\Service\Auth\CodexWhoAmI

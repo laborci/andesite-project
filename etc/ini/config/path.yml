@@ -1,4 +1,5 @@
 #path
+root ~: root
 var ~: root + "var/"
 assets ~: root + "assets/"
 tmp ~: root + "var/tmp/"
