@@ -3,7 +3,7 @@
 use Andesite\DBAccess\Connection\Filter\Filter;
 use Andesite\Zuul\Interfaces\AuthenticableInterface;
 use Andesite\Zuul\Interfaces\AuthRepositoryInterface;
-use Application\Constant\Permission\Role;
+use Application\Component\Constant\Permission\Role;
 use Application\Ghost\User;
 
 class AuthRepository implements AuthRepositoryInterface{

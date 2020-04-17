@@ -4,10 +4,10 @@ use Andesite\Core\Constant\Constant;
 /**
  * @prefix false
  * @const admin
- * @const visitor
+ * @const active
  */
 class Role extends Constant
 {
 	const Admin = 'Admin';
-	const Visitor = 'Visitor';
+	const Active = 'Active';
 }

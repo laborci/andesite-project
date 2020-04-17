@@ -1,4 +1,4 @@
-<?php namespace Application\Module\CliCommand;
+<?php namespace Application\CliCommand;
 
 use Andesite\Mission\Cli\CliCommand;
 use Andesite\Mission\Cli\CliModule;

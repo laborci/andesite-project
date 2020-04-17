@@ -1,9 +1,8 @@
-#startup modules
+# - startup modules
 debug: Application\Module\Debug
 alert: Application\Module\Alert
 
-
-#module.aliases
+# - module.aliases
 auth: Andesite\Zuul\Auth\Auth
 codex: Andesite\Codex
 ghosts: Andesite\Ghost\GhostManager
@@ -13,7 +12,7 @@ twig-responder: Andesite\TwigResponder\TwigResponder
 attachment-repository: Andesite\Attachment\AttachmentRepository
 reroute-mission: Andesite\Mission\Reroute\RerouteMission
 
-#cli
+# - cli
 cron: Andesite\CliCommand\Cron
 dump-db: Andesite\CliCommand\DumpDB
 show-env: Andesite\CliCommand\ShowEnv
@@ -23,3 +22,4 @@ update-groups: Andesite\CliCommand\UpdateGroups
 generate-constants: Andesite\CliCommand\GenerateConstants
 extract-api: Andesite\CliCommand\ExtractApi
 generate-config: Andesite\CliCommand\GenerateConfig
+generate-public-index: Andesite\CliCommand\GeneratePublicIndex

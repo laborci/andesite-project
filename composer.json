@@ -22,7 +22,8 @@
 		"psr-4": {
 			"Application\\": "@src/application",
 			"Application\\AdminCodex\\": "@src/mission.admin/app",
-			"Application\\Mission\\Web\\": "@src/mission.web/app"
+			"Application\\Mission\\Web\\": "@src/mission.web/app",
+			"Application\\CliCommand\\": "@src/cli"
 		}
 	}
 }

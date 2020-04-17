@@ -1,8 +1,6 @@
 pattern: ":"
 mission: Andesite\Mission\Cli\CliMission
 modules:
-  Application\Module\CliCommand\Test:
-  Application\Module\CliCommand\ImportUsers:
   cron:
   dump-db:
   show-env:
@@ -12,3 +10,4 @@ modules:
   generate-constants:
   extract-api:
   generate-config:
+  generate-public-index:

@@ -1,4 +1,4 @@
-# loader
+# - loader
 
 /path @: config/path
 /sys.missions @: missions/*

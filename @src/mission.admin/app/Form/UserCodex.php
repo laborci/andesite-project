@@ -7,7 +7,7 @@ use Andesite\Codex\Form\FormHandler\FormHandler;
 use Andesite\Codex\Form\ListHandler\ListHandler;
 use Andesite\Codex\Interfaces\ItemDataImporterInterface;
 use Application\AdminCodex\GhostHelper\UserGhostCodexHelper;
-use Application\Constant\Permission\Role;
+use Application\Component\Constant\Permission\Role;
 
 class UserCodex extends UserGhostCodexHelper{
 
@@ -45,8 +45,6 @@ class UserCodex extends UserGhostCodexHelper{
 		$main->input('string', new Field('newpassword'), 'új jelszó');
 		$main->input('checkboxes', $this->groups)
 		('options', $this->groups->options);
-		$main->input('radio', $this->status)
-		('options', $this->status->options);
 	}
 
 

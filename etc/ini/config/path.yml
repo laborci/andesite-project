@@ -1,4 +1,5 @@
-#path
+# - path
+
 root ~: root
 var ~: root + "var/"
 assets ~: root + "assets/"
