@@ -4,7 +4,6 @@ use Andesite\Ghost\GhostManager;
 use Andesite\Mission\Web\Routing\ApiManager;
 use Andesite\Mission\Web\Routing\Router;
 use Andesite\Mission\Web\WebMission;
-use Application\Mission\Web\Action\Auth\PasswordReset;
 
 class Mission extends WebMission{
 
@@ -12,6 +11,7 @@ class Mission extends WebMission{
 
 		ApiManager::setup($router, '/api', __NAMESPACE__.'\\Api');
 		GhostManager::Module()->routeThumbnail($router);
+		$router->get('/', Page\Index::class)();
 
 	}
 }

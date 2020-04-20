@@ -12,7 +12,7 @@ use Andesite\Codex\Interfaces\DataProviderInterface;
  * @label-field email:
  * @label-field groups:
  * @label-field groups.admin:
- * @label-attachment avatar: avatár
+ * @label-attachment avatar:
  */
 abstract class UserGhostCodexHelper extends AdminDescriptor{
 
@@ -30,7 +30,7 @@ abstract class UserGhostCodexHelper extends AdminDescriptor{
 		$this->password = new Field('password', 'password');
 		$this->email = new Field('email', 'email');
 		$this->groups = new Field('groups', 'groups', ['admin'=>'admin']);
-		$this->avatar = new Field('avatar', 'avatár');
+		$this->avatar = new Field('avatar', 'avatar');
 	}
 
 	protected function createDataProvider(): DataProviderInterface{

@@ -42,7 +42,7 @@ class UserCodex extends UserGhostCodexHelper{
 		$main = $form->section('Adatok');
 		$main->input('string', $this->name);
 		$main->input('string', $this->email);
-		$main->input('string', new Field('newpassword'), 'új jelszó');
+		$main->input('string', new Field('newpassword'), 'new password');
 		$main->input('checkboxes', $this->groups)
 		('options', $this->groups->options);
 	}

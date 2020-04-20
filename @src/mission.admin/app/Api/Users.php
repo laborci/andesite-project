@@ -11,7 +11,7 @@ class Users extends ApiJsonResponder{
 	 * @on get
 	 */
 	function get($id){
-		$ids = explode(',',$id);
+		$ids = explode(',', $id);
 		$users = User::collect($ids);
 		return array_map([$this, 'map'], $users);
 	}
@@ -19,18 +19,12 @@ class Users extends ApiJsonResponder{
 	 * @accepts get
 	 */
 	function search($name){
-		$users = User::search(
-			Filter::where(User::f_name()->instring($name))
-				->or(User::f_nick()->instring($name)
-				))->collect();
+		$users = User::search(Filter::where(User::f_name()->instring($name)))->collect();
 		return array_map([$this, 'map'], $users);
 	}
 
 	function map(User $user){
-		if(is_null($user)) return null;
-		return [
-			'key'   => $user->id,
-			'value' => $user->nick. ($user->name ? ' ('. $user->name.')' : ''),
-		];
+		if (is_null($user)) return null;
+		return ['key' => $user->id, 'value' => $user->name];
 	}
 }
