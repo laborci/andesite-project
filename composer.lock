@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "andesite/core",
-            "version": "1.0.19",
+            "version": "1.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laborci/andesite.git",
-                "reference": "195a23cb6ccd0d0ef757729736fc89d6d9d3d40a"
+                "reference": "b6ec537a3839aac631c4c9e152616de97af4c340"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laborci/andesite/zipball/195a23cb6ccd0d0ef757729736fc89d6d9d3d40a",
-                "reference": "195a23cb6ccd0d0ef757729736fc89d6d9d3d40a",
+                "url": "https://api.github.com/repos/laborci/andesite/zipball/b6ec537a3839aac631c4c9e152616de97af4c340",
+                "reference": "b6ec537a3839aac631c4c9e152616de97af4c340",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 }
             ],
             "description": "Andesite",
-            "time": "2020-04-16T12:31:23+00:00"
+            "time": "2020-04-17T13:43:48+00:00"
         },
         {
             "name": "badcow/lorem-ipsum",
