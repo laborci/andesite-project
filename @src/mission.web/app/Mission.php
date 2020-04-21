@@ -1,5 +1,6 @@
 <?php namespace Application\Mission\Web;
 
+use Andesite\Core\ServiceManager\ServiceContainer;
 use Andesite\Ghost\GhostManager;
 use Andesite\Mission\Web\Routing\ApiManager;
 use Andesite\Mission\Web\Routing\Router;
@@ -12,6 +13,5 @@ class Mission extends WebMission{
 		ApiManager::setup($router, '/api', __NAMESPACE__.'\\Api');
 		GhostManager::Module()->routeThumbnail($router);
 		$router->get('/', Page\Index::class)();
-
 	}
 }

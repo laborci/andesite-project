@@ -5,7 +5,7 @@ CREATE TABLE `user` (
   `name` varchar(255) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_hungarian_ci DEFAULT NULL,
   `password` char(128) COLLATE utf8_hungarian_ci DEFAULT NULL COMMENT 'password',
-  `groups` set('Active','Admin') COLLATE utf8_hungarian_ci DEFAULT NULL,
+  `groups` set('admin') COLLATE utf8_hungarian_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
