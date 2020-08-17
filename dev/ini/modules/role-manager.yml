@@ -1,0 +1,4 @@
+module: Andesite\Auth\RoleManager\RoleManager
+config:
+  groups: Application\Component\Constant\Permission\Group
+

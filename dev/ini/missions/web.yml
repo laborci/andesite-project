@@ -1,0 +1,4 @@
+pattern~: ("www." + sys.domain)
+mission: \Application\Mission\Web\Mission
+modules:
+  twig-responder.twig-main ~root: "dev/src/#web/template"

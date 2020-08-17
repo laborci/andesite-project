@@ -1,10 +1,8 @@
-.DS_Store
 .idea
-var/**
-data/**
-etc/ini/**/*.local.yml
-public/**
-build-version
-build-number
 vendor
 node_modules
+app/**
+dev/etc/**/*.local.yml
+dev/assets/~fonts/**/*
+.DS_Store
+.devmode

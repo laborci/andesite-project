@@ -1,0 +1,5 @@
+module: Andesite\Ghost\GhostManager
+config:
+  namespace: Application\Ghost
+  decorator: Application\Ghosts
+  attachment: ghost

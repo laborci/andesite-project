@@ -1,0 +1,11 @@
+boot ~path.dev: src/boot.php
+domain: yoursite.test
+timezone: Europe/Budapest
+language: hu
+modules.boot:
+  debug:
+modules.load:
+  attachment-repository:
+  db:
+  ghosts:
+  role-manager:

@@ -1,0 +1,19 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #00aeff;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	font-family: "Open Sans", Roboto, Arial, "Droid Sans", sans-serif;
+	font-size: 16px;
+	color: #fff;
+	width: 100vw;
+	height: 100vh;
+}

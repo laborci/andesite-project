@@ -1,5 +1,5 @@
 {
-	"name": "andesite/project",
+	"name": "tinystudios/365doctors",
 	"authors": [
 		{
 			"name": "Gergely Laborci",
@@ -7,23 +7,28 @@
 		}
 	],
 	"require": {
-		"rah/danpu": "^2.7",
-		"phpmailer/phpmailer": "^6.1",
 		"ext-json": "*",
 		"ext-pdo": "*",
 		"ext-sqlite3": "*",
 		"ext-gd": "*",
 		"ext-simplexml": "*",
+		"rah/danpu": "^2.7",
+		"phpmailer/phpmailer": "^6.1",
 		"erusev/parsedown": "^1.7",
 		"badcow/lorem-ipsum": "^1.1",
-		"andesite/core": "^1.0"
+		"andesite/core": "1.1.*",
+		"symfony/validator": "^5.1",
+		"phpdocumentor/reflection-docblock": "^5.1",
+		"lcobucci/jwt": "^4.0@alpha"
 	},
 	"autoload": {
 		"psr-4": {
-			"Application\\": "@src/application",
-			"Application\\AdminCodex\\": "@src/mission.admin/app",
-			"Application\\Mission\\Web\\": "@src/mission.web/app",
-			"Application\\CliCommand\\": "@src/cli"
+			"Application\\": "dev/src/application",
+			"Application\\AdminCodex\\": "dev/src/#admin/mission",
+			"Application\\Mission\\Web\\": "dev/src/#web/mission"
 		}
+	},
+	"extra": {
+		"andesite-boot": "dev/src/boot.php"
 	}
 }

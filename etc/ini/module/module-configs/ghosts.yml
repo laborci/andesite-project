@@ -1,3 +1,0 @@
-namespace: Application\Ghost
-decorator: Application\Ghosts
-attachment: ghost

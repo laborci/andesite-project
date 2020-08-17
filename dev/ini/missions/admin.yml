@@ -1,0 +1,11 @@
+pattern~: ("admin." + sys.domain)
+mission: Application\AdminCodex\Mission
+config:
+  title: Andesite
+  icon: fas fa-user
+  loginpPlaceholder: email
+  role: Admin
+  who-am-i: Application\Service\Auth\CodexWhoAmI
+  form-automap: Application\AdminCodex\Form
+modules:
+  twig-responder:

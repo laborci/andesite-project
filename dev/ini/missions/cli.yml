@@ -1,0 +1,67 @@
+pattern: ":"
+mission: Andesite\Mission\Cli\CliMission
+modules:
+
+# ===== YOUR APP COMMANDS =====
+
+  # app:test
+  Application\Module\CliCommand\Test:
+
+# ===== ANDESITE COMMANDS =====
+
+  # mig:dump [dump]
+  # mig:generate
+  # mig:go
+  # mig:init
+  # mig:refresh
+  # mig:status
+  Andesite\CliCommand\Migrate\Module:
+    default-database: default
+    location ~path.etc: /migration
+    dump.path ~path.dev: etc/dump/
+
+  # run-task [cron]
+  Andesite\CliCommand\Cron:
+    null-cron: null
+
+  # ghost:codex [codex]
+  # ghost:generate [ghost]
+  Andesite\CliCommand\Ghost:
+    codexhelper.namespace: Application\AdminCodex\GhostHelper
+
+  # groups
+  Andesite\CliCommand\UpdateGroups:
+    user-ghost: Application\Ghost\User
+    group-field: groups
+
+  # constants [const]
+  Andesite\CliCommand\GenerateConstants:
+    namespaces: [Application\Constant]
+
+  # api:generate [api]
+  Andesite\CliCommand\ExtractApi:
+    api:
+      path: /api/
+      namespace: Application\Mission\Web\Api
+      extract:
+        - file ~root: /dev/src/#web/frontend/modules/constants/end-points.js
+          as: Endpoints
+
+  # config [vhost]
+  Andesite\CliCommand\GenerateConfig:
+    source ~path.etc: vhost
+    data @: config/vhost
+    translate:
+      virtualhost-conf ~path.var: virtualhost.conf
+      virtualhost-ssl-redirect-conf ~path.var: virtualhost-ssl-redirect.conf
+      user-ini ~path.assets: .user.ini
+      htaccess ~path.assets: .htaccess
+
+  # devmode
+  Andesite\CliCommand\DevMode:
+
+  # env
+  Andesite\CliCommand\ShowEnv:
+
+  # mkdir
+  Andesite\CliCommand\MkDir:
