@@ -7,9 +7,9 @@ assets ~: path.dev + "assets/"
 
 app ~: root + "app/"
 data ~: path.app + "data/"
+attachment-meta ~: path.data + "attachment-meta/"
+attachment ~: path.data + "attachment/"
 public ~: path.app + "public/"
 var ~: path.app + "var/"
 tmp ~: path.var + "tmp/"
 annotation-reader-cache ~: path.var + "annotations-cache/"
-
-
