@@ -6,7 +6,5 @@ auth:
 mail:
   template ~path.root: /dev/src/resources/mail-template/
   sender:
-    email: robotmajom@gamer365.hu
-    name: Robotmajom
-sites:
-  - demo.test
+    email: robot@mysite.test
+    name: Robot
