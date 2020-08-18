@@ -1,6 +1,8 @@
-# Prepare your environment
+# Andesite Project
 
-## Fontawesome
+## Prepare your environment
+
+### 1. Fontawesome
 
 If you are paid customer of fontawesome, you should add your auth token to npm
 
@@ -11,7 +13,7 @@ If you are paid customer of fontawesome, you should add your auth token to npm
 Otherwise after installation, you should modify the `package.json` from `"@fortawesome/fontawesome-pro"` to `"@fortawesome/fontawesome-free"`
 
 
-## Install andesite cli
+### 2. Install andesite cli
 
 `composer global require andesite/cli`
 
@@ -19,12 +21,12 @@ add composer bin dir to your path (`~/.composer/vendor/bin`)
 
 `export PATH=$PATH:~/.composer/vendor/bin`
 
-## Install rlogtail
+### 3. Install rlogtail
 
 `npm install -g rlogtail`
 
 
-# Create your new andesite project
+## Create your new andesite project
 
 ### 1. Create the project 
 `composer create-project andesite/project yourproject`
