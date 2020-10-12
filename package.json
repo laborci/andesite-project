@@ -4,7 +4,8 @@
 	"scripts": {
 		"build": "webpack --progress --colors --mode production",
 		"work": "webpack --progress --colors --watch  --mode development",
-		"ggf": "node ./node_modules/zengular-build/src/zengular-ggf.js"
+		"ggf": "node ./node_modules/zengular-build/src/zengular-ggf.js",
+		"tail": "rlogtail -s rlogtail.sock"
 	},
 	"postcss": {
 		"plugins": {
@@ -13,23 +14,58 @@
 	},
 	"browserslist": [
 		"last 2 version",
-		"iOS >= 9"
+		"iOS >= 12"
 	],
-	"google-fonts": "z-build-google-fonts.json",
-	"z-build": "z-build.json",
 	"dependencies": {
-		"@fortawesome/fontawesome-pro": "^5.13.0",
-		"balloon-css": "^1.0.4",
+		"@fortawesome/fontawesome-pro": "^5.15.1",
+		"balloon-css": "^1.2.0",
+		"copy-text-to-clipboard": "^2.2.0",
+		"croppr": "^2.3.1",
+		"emojione": "^4.5.0",
+		"font-awesome-animation": "^0.2.1",
 		"font-awesome-filetypes": "^2.1.0",
+		"marked": "^1.2.0",
 		"slide-anim": "^1.3.2",
-		"zengular": "^3.0.19",
-		"zengular-codex": "^2.0.9",
+		"swipejs": "^2.2.18",
+		"terser-webpack-plugin": "^2.3.8",
+		"zengular": "^3.0.30",
+		"zengular-codex": "^2.0.37",
 		"zengular-router": "^1.1.4",
-		"zengular-ui": "^2.0.9",
-		"zengular-util": "^1.0.7"
+		"zengular-ui": "^2.0.18",
+		"zengular-util": "^1.0.14"
 	},
 	"devDependencies": {
-		"webpack-cli": "^3.3.11",
-		"zengular-build": "^3.1.6"
+		"webpack-cli": "^3.3.12",
+		"webpack-import-glob-loader": "^1.6.3",
+		"zengular-build": "^3.1.7"
+	},
+	"google-fonts": "dev/etc/z-build/google-fonts.json",
+	"z-build": "dev/etc/z-build/config.json",
+	"my-packages": {
+		"andesite": {
+			"src": "vendor/andesite",
+			"pattern": "*",
+			"dest": "/work/package-composer/andesite"
+		},
+		"zengular": {
+			"src": "node_modules",
+			"pattern": "zengular*",
+			"dest": "/work/package-npm"
+		}
+	},
+	"kuli": {
+		"path": "dev/etc/kuli-slaves",
+		"ENV": {},
+		"slaves": {
+			"ghost": {},
+			"brick": {
+				"src": "https://raw.githubusercontent.com/laborci/slaves/master/brick",
+				"arguments": {}
+			},
+			"modal": {
+				"src": "https://raw.githubusercontent.com/laborci/slaves/master/modal",
+				"arguments": {}
+			}
+		}
 	}
 }

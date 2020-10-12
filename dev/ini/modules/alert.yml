@@ -1,0 +1,4 @@
+module: Application\Module\Alert
+config:
+  bot.id: your-telegram-bot-id
+  bot.channel: your-telegram-id

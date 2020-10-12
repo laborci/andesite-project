@@ -1,0 +1,6 @@
+module: Andesite\TwigResponder\TwigResponder
+config:
+  twig-cache ~: path.var + "template-cache/"
+  twig-debug: true
+  language &: sys.language
+  client-version-file ~root: app/var/build-number

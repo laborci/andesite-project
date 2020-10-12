@@ -2,7 +2,7 @@ const zBuild = new (require('zengular-build'))();
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin')
-
+console.log(zBuild.entries);
 module.exports = (env, options) => {
 
 	let dev = options.mode === 'development';
@@ -49,18 +49,10 @@ module.exports = (env, options) => {
 			rules: [
 				{
 					test: /\.js$/,
-					use: {
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env'],
-							plugins: [
-								["@babel/plugin-proposal-decorators", {"legacy": true}],
-								"@babel/plugin-proposal-class-properties",
-								"@babel/plugin-proposal-object-rest-spread",
-								"@babel/plugin-proposal-optional-chaining"
-							]
-						}
-					}
+					use: [
+						{loader: 'webpack-import-glob-loader'},
+						{loader: 'babel-loader'}
+					]
 				},
 				{
 					test: /\.(html)$/,

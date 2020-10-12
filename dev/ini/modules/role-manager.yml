@@ -1,0 +1,6 @@
+module: Andesite\Auth\RoleManager\RoleManager
+config:
+  groups: Application\Constant\Permission\Group
+  user-ghost: Application\Ghost\User
+  group-field: group
+  multi-group: false

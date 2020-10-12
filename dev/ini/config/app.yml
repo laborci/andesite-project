@@ -1,0 +1,15 @@
+auth:
+  jwt-key: "b44224f8-8eb2-11ea-bc75-0242ac130013"
+  autologin:
+    cookie: "autologin"
+    timeout: "+ 30 days"
+
+mail:
+  smtp:
+  user:
+  password:
+
+  template ~path.root: /dev/etc/resources/mail-template/
+  sender:
+    email:
+    name:

@@ -1,0 +1,40 @@
+/* MODAL FOR FORMS */
+.form-modal {
+	font-family: Rajdhani;
+
+	section { padding: 10px;}
+
+	.error {
+		overflow-y:                 hidden;
+		transition-property:        all;
+		transition-duration:        .5s;
+		transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+		height:                     0px;
+		&.visible {
+			height: 20px;
+		}
+		color:                      darkred;
+		font-size:                  12px;
+		margin-bottom:              6px;
+		a {
+			text-decoration: underline;
+			cursor:          pointer;
+		}
+	}
+
+	button[type=submit] { display: none;}
+
+	input:-webkit-autofill,
+	input[type=password],
+	input[type=text] {
+		width:            100%;
+		padding:          10px;
+		margin-bottom:    3px;
+		background-color: white !important;
+		border:           1px solid #ddd;
+	}
+}
+
+/* BLUR MODAL BACKDROP */
+.brick-modalify{backdrop-filter: blur(4px)!important;}
+

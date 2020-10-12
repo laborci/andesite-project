@@ -1,0 +1,20 @@
+[is="codex-input-gmark-big"] {
+	button{
+		border:none;
+		cursor: pointer;
+		display: block;
+		background-color: olivedrab;
+		color:white;
+		padding: 5px;
+		width: 100%;
+	}
+	textarea{
+		display: block;
+		border:0;
+		border-top:1px solid #eee;
+		width: 100%;
+		resize: vertical;
+		padding:10px;
+		color:#73879c;
+	}
+}

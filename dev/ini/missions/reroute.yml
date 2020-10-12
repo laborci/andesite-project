@@ -1,0 +1,3 @@
+pattern ~: sys.domain
+mission: Andesite\Mission\Reroute\RerouteMission
+config.reroute ~: ("www." + sys.domain)

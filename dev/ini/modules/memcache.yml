@@ -1,0 +1,7 @@
+module: Andesite\Util\Memcache\Memcache
+config:
+  allowed: true
+  server:
+    host: 127.0.0.1
+    port: 11211
+  prefix &: sys.domain

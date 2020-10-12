@@ -1,5 +1,5 @@
 {
-	"name": "andesite/project",
+	"name": "365media/gamer365",
 	"authors": [
 		{
 			"name": "Gergely Laborci",
@@ -7,23 +7,21 @@
 		}
 	],
 	"require": {
-		"rah/danpu": "^2.7",
-		"phpmailer/phpmailer": "^6.1",
-		"ext-json": "*",
-		"ext-pdo": "*",
-		"ext-sqlite3": "*",
-		"ext-gd": "*",
-		"ext-simplexml": "*",
-		"erusev/parsedown": "^1.7",
-		"badcow/lorem-ipsum": "^1.1",
-		"andesite/core": "^1.0"
+		"ext-curl": "*",
+		"andesite/core": "^1.2.1",
+		"wapmorgan/mp3info": "^0.0.5",
+		"lcobucci/jwt": "4.0.0-alpha3",
+		"symfony/filesystem": "^5.1"
 	},
 	"autoload": {
 		"psr-4": {
-			"Application\\": "@src/application",
-			"Application\\AdminCodex\\": "@src/mission.admin/app",
-			"Application\\Mission\\Web\\": "@src/mission.web/app",
-			"Application\\CliCommand\\": "@src/cli"
+			"Application\\": "dev/src",
+			"Application\\AdminCodex\\": "dev/src/@admin/mission",
+			"Application\\Cli\\": "dev/src/@cli",
+			"Application\\Mission\\Web\\": "dev/src/@web/mission"
 		}
+	},
+	"extra": {
+		"andesite-boot": "dev/src/boot.php"
 	}
 }

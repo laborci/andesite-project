@@ -1,0 +1,25 @@
+$respo-s: 576px;
+$respo-m: 768px;
+$respo-l: 992px;
+$respo-xl: 1200px;
+
+@mixin respo($min, $max: 0) {
+	@if $max == 0{
+		@media screen and (min-width: $min) {@content;}
+	} @else{
+		$max: $max - 1px;
+		@media screen and (min-width: $min) and (max-width: $max) {@content;}
+	}
+}
+
+@mixin respo-xs() { @include respo(0, $respo-s){@content;}}
+@mixin respo-s() { @include respo($respo-s, $respo-m){@content;}}
+@mixin respo-m() { @include respo($respo-m, $respo-l){@content;}}
+@mixin respo-l() { @include respo($respo-l, $respo-xl){@content;}}
+@mixin respo-xl() { @include respo($respo-xl){@content;}}
+
+@mixin r-l(){ @include respo(1020px, 0){@content;} }
+@mixin r-m(){ @include respo(680px, 1020px){@content;} }
+@mixin r-ml(){ @include respo(680px, 0){@content;} }
+@mixin r-s(){ @include respo(0, 680px){@content;} }
+@mixin r-sm(){ @include respo(0, 1020px){@content;} }

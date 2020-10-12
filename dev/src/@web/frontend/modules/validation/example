@@ -1,0 +1,82 @@
+
+//
+//import LengthValidator from "./modules/validation/validator/length-validator";
+//import MinMaxValidator from "./modules/validation/validator/min-max-validator";
+//import EmailValidator  from "./modules/validation/validator/email-validator";
+//import ExistsValidator from "./modules/validation/validator/exists-validator";
+//import Guard           from "./modules/validation/guard";
+//import ValueConverter  from "./modules/validation/converter/value-converter";
+//import Validator       from "./modules/validation/validator";
+//import TypeValidator   from "./modules/validation/validator/type-validator";
+//
+//LengthValidator.message = (error, validator) => `A(z) ${validator.alias} hossza nem megfelelő (${validator.value}). (${validator.args.min} - ${validator.args.max})`;
+//MinMaxValidator.message = (error, validator) => `A(z) ${validator.alias} értéke nem megfelelő (${validator.value}). (min: ${validator.args.min} - max: ${validator.args.max})`;
+//EmailValidator.message = (error, validator) => `A(z) ${validator.alias} nem email`;
+//ExistsValidator.message = (error, validator) => `A(z) ${validator.alias} megadása kötelező`;
+//
+//let guard = new Guard();
+//
+//guard.create('email', 'E-mail')
+//	.allowEmpty()
+//	.add(new ValueConverter(value => value.toString()))
+//	.add(new ValueConverter(value => value.toUpperCase()))
+//	.add(new TypeValidator('string'))
+//	.add(new LengthValidator(4, 10).break())
+//	.add(new EmailValidator().setMessage(() => "EMAIL LEGYEN BASZOD!"))
+//;
+//
+//guard.create('name', 'név')
+//	.add(new ExistsValidator().setMessage(() => `A név mező kötelező, se híre, se hamva baszod!`))
+//	.add(new LengthValidator(3, 10).break())
+//	.add(new Validator(() => "a név már foglalt").identify('NAMEEXISSTS'))
+//;
+//
+//guard.create('gender', 'nem')
+//	.default('shemale')
+//;
+//
+//guard.create('age', 'életkor')
+//	.default(6)
+//	.add(new ValueConverter(value => parseInt(value)))
+//	.add(new MinMaxValidator(7, 10))
+//;
+//
+//guard.create('birthyear', 'születési év')
+//	.default(2015)
+//	.add(new ValueConverter(value => parseInt(value)))
+//;
+//
+//guard.create('complex', 'komplex hiba', 'age')
+//	.add(new Validator(
+//		() => 'Nem stimmel a születési év / kor',
+//		(value, validation) => {
+//			if (2020 - validation.subject.age !== validation.subject.birthyear) validation.resultError();
+//		}
+//	))
+//;
+//
+//let user = {
+//	name: 'joe',
+//	email: 'elvis@gamer365.com',
+//};
+//
+//let errors = {
+//	name: {
+//		'NAMEEXISSTS': null,
+//	}
+//};
+//
+//console.log('--- User')
+//console.log(user);
+//
+//console.log('******************')
+//let result = guard.test(user, errors);
+//
+//for (let key in result) if (result.hasOwnProperty(key)) {
+//	console.log(key + ':');
+//	result[key].forEach(error => {
+//		console.log(' - ' + error.message);
+//	})
+//}
+//console.log('--- User')
+//console.log(user);

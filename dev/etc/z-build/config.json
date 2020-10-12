@@ -1,0 +1,13 @@
+{
+	"copy": {
+		"node_modules/@fortawesome/fontawesome-pro/webfonts/*": "dev/etc/assets/~fonts/fontawesome/",
+		"dev/etc/assets/**": "app/public"
+	},
+	"entries": {
+		"dev/src/@web/frontend/app.js": "app/public/~web/app",
+		"dev/src/@admin/frontend/app.js": "app/public/~admin/app",
+		"dev/src/@admin/frontend/login.js": "app/public/~admin/login"
+	},
+	"verbump": "app/var/build-number",
+	"devtool": false
+}

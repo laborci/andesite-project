@@ -1,0 +1,11 @@
+boot ~path.dev: src/boot.php
+domain: andesite.test
+timezone: Europe/Budapest
+language: hu
+modules.boot:
+  debug:
+modules.load:
+  memcache:
+  db:
+  ghosts:
+  role-manager:

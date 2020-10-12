@@ -1,0 +1,19 @@
+module: Andesite\Ghost\GhostManager
+config:
+  namespace:
+    ghost: Application\Ghost
+    shadow: Application\Andesite\Ghost\Shadow
+    finder: Application\Andesite\Ghost\Finder
+
+#  decorator: Application\Ghosts
+#  attachment: ghost
+  attachment-config:
+    path ~: path.data + "attachment/"
+    database:
+      name: default
+      table-prefix: _file_
+    url: /~fs/
+    thumbnail:
+      path ~: path.var + "thumbnail/"
+      secret: ferengi
+      url: /~thumbnail

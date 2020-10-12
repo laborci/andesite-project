@@ -1,0 +1,16 @@
+#path
+root ~: root
+
+dev ~: root + "dev/"
+etc ~: path.dev + "etc/"
+assets ~: path.dev + "assets/"
+
+app ~: root + "app/"
+data ~: path.app + "data/"
+public ~: path.app + "public/"
+var ~: path.app + "var/"
+tmp ~: path.var + "tmp/"
+annotation-reader-cache ~: path.var + "annotations-cache/"
+cache-middleware ~: path.var + "output-cache/"
+
+
